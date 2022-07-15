@@ -1,0 +1,6 @@
+{
+  "terminal.integrated.env.osx": {
+    // "AWS_DEFAULT_REGION": "$(aws configure get region --profile pluralsight)"
+    "AWS_DEFAULT_REGION": "us-west-2"
+  }
+}

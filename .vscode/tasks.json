@@ -1,0 +1,34 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Initialize AWS account",
+      "type": "shell",
+      "command": "aws configure set aws_access_key_id \"${input:access_key_id}\" --profile $profile_name && aws configure set aws_secret_access_key \"${input:secret_access_key_id}\" --profile $profile_name && aws configure set region \"${input:aws_region}\" --profile $profile_name;",
+      "options": {
+        "env": {
+          "profile_name": "pluralsight"
+        }
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "access_key_id",
+      "type": "promptString",
+      "description": "AWS Access Key ID",
+      "password": true
+    },
+    {
+      "id": "secret_access_key_id",
+      "type": "promptString",
+      "description": "AWS Secret Access Key ID",
+      "password": true
+    },
+    {
+      "id": "aws_region",
+      "type": "promptString",
+      "description": "AWS Region"
+    }
+  ]
+}
